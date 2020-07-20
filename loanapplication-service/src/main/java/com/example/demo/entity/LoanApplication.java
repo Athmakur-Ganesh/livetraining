@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import org.omg.CORBA.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -23,6 +24,8 @@ public class LoanApplication {
 	@Autowired
 	@Qualifier("vishal")
 	private TaxDetails taxDetails;
+	
+	
 	
 	public LoanApplication(int applicationNumber, Customer customerName, double loanAmount) {
 		super();

@@ -1,0 +1,16 @@
+
+
+
+spring:
+  profiles:
+  - dev  
+server:
+  port: 2020
+  
+---
+
+spring:
+  profiles:
+  - qa
+server:
+  port: 3030    
