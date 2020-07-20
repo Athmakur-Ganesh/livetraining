@@ -1,5 +1,8 @@
 package com.example.demo.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,6 +19,11 @@ public class LoanApplication {
 	private int applicationNumber;
 	private Customer customerName;
 	private double loanAmount;
+	
+	@Autowired
+	@Qualifier("vishal")
+	private TaxDetails taxDetails;
+	
 	public LoanApplication(int applicationNumber, Customer customerName, double loanAmount) {
 		super();
 		this.applicationNumber = applicationNumber;
