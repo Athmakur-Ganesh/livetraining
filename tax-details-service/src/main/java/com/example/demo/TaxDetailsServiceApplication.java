@@ -27,7 +27,7 @@ public class TaxDetailsServiceApplication {
 			@Override
 			public void run(String... args) throws Exception {
 				
-				repo.save(new TaxDetail("aa11", "employed", "vignesh", "chennai-1"));
+				repo.save(new TaxDetail("aa", "employed", "vignesh", "chennai-1"));
 			}
 		};
 	}

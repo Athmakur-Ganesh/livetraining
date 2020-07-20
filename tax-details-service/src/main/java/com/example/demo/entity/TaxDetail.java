@@ -21,7 +21,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Component
 @Entity
-@Table(name="syn-taxdetails")
+@Table(name="syntaxdetails")
 public class TaxDetail {
 
 	@Id
@@ -30,8 +30,7 @@ public class TaxDetail {
 	String entityName;
 	String itCircle;
 	
-	@Autowired
-	Environment env;
+	
 	
 	public TaxDetail() {
 		super();
@@ -50,15 +49,7 @@ public class TaxDetail {
 	}
 
 	
-	@PostConstruct
-	public void init() {
-		
-
-		String[] active =env.getActiveProfiles();
-		
-		Arrays.asList(active).forEach(System.out::println);
-		
-	}
+	
 	
 	
 }
