@@ -1,5 +1,9 @@
 package com.example.demo.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,13 +11,15 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 
-
+@Entity
+@Table(name="synciblscore")
 @AllArgsConstructor
 @Data
 @Slf4j
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CibilScore {
 
+	 @Id
 	 int  id;
 	 String panNumber;
 	 String firstName;

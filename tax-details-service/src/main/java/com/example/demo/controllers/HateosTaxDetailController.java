@@ -35,13 +35,15 @@ public class HateosTaxDetailController {
 		for(HateosTaxDetail eachItem: details) {
 			
 			Link link = WebMvcLinkBuilder.linkTo(HateosTaxDetailController.class)
-					        .slash("/api/v2/taxdetails/"+eachItem.getPanNumber()).withSelfRel();
+					        .slash("/api/v1/cibilscore/"+eachItem.getPanNumber()).withRel("cibilscore");
 		
 			eachItem.add(link);
 		}
 		
-		  Link selfLink = WebMvcLinkBuilder.linkTo(HateosTaxDetailController.class).withSelfRel();
-		 CollectionModel<HateosTaxDetail> response = CollectionModel.of(details,selfLink);
+		  Link selfLink = WebMvcLinkBuilder.linkTo(TaxDetailsController.class).slash("/api/v1/taxdetails/").withRel("version1");
+		  
+			CollectionModel<HateosTaxDetail> response = 
+				 CollectionModel.of(details,selfLink);
 		 
 		 
 		return response;
