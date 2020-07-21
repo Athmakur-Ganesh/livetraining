@@ -23,4 +23,9 @@ public class TaxDetailsService {
 		
 		return this.repo.findAll();
 	}
+	
+	public TaxDetail add(TaxDetail entity) {
+		
+		return this.repo.save(entity);
+	}
 }
