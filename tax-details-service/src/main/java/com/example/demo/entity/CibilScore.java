@@ -21,6 +21,7 @@ public class CibilScore {
 
 	 @Id
 	 int  id;
+	 
 	 String panNumber;
 	 String firstName;
 	 double score;

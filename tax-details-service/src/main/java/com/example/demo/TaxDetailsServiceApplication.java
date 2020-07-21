@@ -9,7 +9,11 @@ import org.springframework.context.annotation.Bean;
 import com.example.demo.entity.TaxDetail;
 import com.example.demo.repos.TaxDetailsRepository;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+
 @SpringBootApplication
+@OpenAPIDefinition(info =@Info(title = "Loan Processing Service"))
 public class TaxDetailsServiceApplication {
 
 	public static void main(String[] args) {
