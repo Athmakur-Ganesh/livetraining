@@ -28,4 +28,16 @@ public class TaxDetailsService {
 		
 		return this.repo.save(entity);
 	}
+	
+	
+    public TaxDetail update(TaxDetail entity) {
+		
+		return this.repo.save(entity);
+	}
+    
+   public void remove(TaxDetail entity) {
+		
+		this.repo.delete(entity);
+	}
+    
 }
