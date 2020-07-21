@@ -7,10 +7,11 @@ spring:
         datasource:    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test
     username: root
-    password: srivatsan
+    password: srivatsan  boot:    admin:      client:        url:        - http://localhost:1010
     
 server:  port: 2020  
-  
+
+management:  endpoints:    web:      exposure:        include:        - "*"
 # ---
 
 #spring:#  h2:#    console:#      enabled: true
