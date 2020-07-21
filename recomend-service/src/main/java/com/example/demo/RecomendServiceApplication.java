@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.example.demo.aop.CommonPointCuts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,6 +17,11 @@ public class RecomendServiceApplication {
 		SpringApplication.run(RecomendServiceApplication.class, args);
 	}
 
+	@Bean
+	public CommonPointCuts points() {
+		
+		return new CommonPointCuts();
+	}
 	
 	@Bean
 	public CommandLineRunner runner() {
