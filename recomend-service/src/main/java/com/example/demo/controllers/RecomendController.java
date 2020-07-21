@@ -29,4 +29,21 @@ public class RecomendController {
 	
 		return this.service.findByProduct(product);
 	}
+	
+	@GetMapping(path = "/api/v1/suggestions/byid/{id}")
+	public Recommendation findById(@PathVariable ("id") int id){
+		
+	
+		return this.service.findById(id);
+	}
+	
+	@GetMapping(path = "/api/v1/suggestions/example")
+	public List<Recommendation> findByExample(){
+		
+		Recommendation entity =new Recommendation();
+		
+		entity.setProductName("PERLOAN");
+		
+		return this.service.find(entity);
+	}
 }

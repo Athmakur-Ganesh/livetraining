@@ -37,7 +37,7 @@ public class RecomendServiceApplication {
 				repo.save(new Recommendation(101,"PERLOAN","Kotak"));
 				repo.save(new Recommendation(102,"PERLOAN","City Bank"));
 				repo.save(new Recommendation(103,"HOULOAN","Lic HFL"));
-				repo.save(new Recommendation(101,"HOULOAN","SBI HFL"));
+				repo.save(new Recommendation(104,"HOULOAN","SBI HFL"));
 				
 			}
 		};
