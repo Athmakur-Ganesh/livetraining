@@ -19,8 +19,10 @@ import lombok.experimental.FieldDefaults;
 public class Recommendation {
 
 	
+//	@Id
+//	private int id;
 	@Id
-	private int id;
+	private Integer id;
 	private String productName;
 	private String description;
 }

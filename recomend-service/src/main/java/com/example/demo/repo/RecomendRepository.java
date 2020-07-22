@@ -9,7 +9,8 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.Recommendation;
 
 @Repository
-public interface RecomendRepository extends QueryByExampleExecutor<Recommendation>, JpaRepository<Recommendation, Integer> {
+public interface RecomendRepository extends 
+QueryByExampleExecutor<Recommendation>, JpaRepository<Recommendation, Integer> {
 
 	public List<Recommendation> findByproductName(String product);
 	

@@ -38,10 +38,11 @@ public class RecomendService {
 //				  .withIgnorePaths("id");                         
 
         
-		ExampleMatcher matcher = ExampleMatcher.matchingAny();                  
+		//ExampleMatcher matcher = ExampleMatcher.matchingAny();                  
 
-       Example<Recommendation> example = Example.of(entity,matcher);
+     //  Example<Recommendation> example = Example.of(entity,matcher);
 
+		Example<Recommendation> example = Example.of(entity);
          return repo.findAll(example);
 	}
 }
