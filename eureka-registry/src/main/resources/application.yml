@@ -1,10 +1,10 @@
 
-server:
-  port: 8761
   
 spring:
   application:
     name: eureka-registry
+  profiles:
+  - default
     
 eureka:
   client:
@@ -20,3 +20,9 @@ management:
       exposure:
         include:
         - "*"      
+        
+server:
+  port: 8761
+  
+
+          
