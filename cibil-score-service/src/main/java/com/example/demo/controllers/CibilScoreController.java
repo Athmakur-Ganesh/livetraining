@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.CibilScore;
@@ -21,10 +22,11 @@ public class CibilScoreController {
 	private CibilScoreRepository service;
 	
 	
-	@GetMapping(path = "/api/v1/scores")
+	@GetMapping(path = "/api/v1/scores",produces = "application/json")
 	public List<CibilScore> getAll(){
 		
 		return this.service.findAll();
 	}
 	
+
 }
