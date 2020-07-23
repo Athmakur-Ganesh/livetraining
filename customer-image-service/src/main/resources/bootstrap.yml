@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri:
+      - http://CONFIG-SERVER
+  application:
+    name: customer-image-service   

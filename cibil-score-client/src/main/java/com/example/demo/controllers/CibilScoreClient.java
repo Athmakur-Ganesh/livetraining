@@ -33,4 +33,6 @@ public class CibilScoreClient {
 		
 		return template.getForObject(requestURL, String.class);
 	}
+	
+	
 }
