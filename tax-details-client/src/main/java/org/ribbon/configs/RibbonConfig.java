@@ -1,7 +1,8 @@
-package com.example.demo.configs;
+package org.ribbon.configs;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.netflix.client.config.IClientConfig;
@@ -14,7 +15,7 @@ public class RibbonConfig {
 	@Autowired
     IClientConfig config;
     
- @Bean
+    @Bean
     public IRule ribbonRule(IClientConfig config) {
         
  //return new BestAvailableRule();
