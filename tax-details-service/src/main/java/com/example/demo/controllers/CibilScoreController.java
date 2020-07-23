@@ -18,8 +18,9 @@ public class CibilScoreController {
 	@GetMapping(path = "/api/v1/cibilscores/{panNumber}")
 	public CibilScore findByPanNumber(@PathVariable("panNumber") String panNumber) {
 		
-		 CibilScore score = repo.findByPanNumber(panNumber);
+		 //CibilScore score = repo.findByPanNumber(panNumber);
 		 
+		 CibilScore score = new CibilScore(2020, "aa", "Ramesh", 4848);
 		 score.setScore(Integer.parseInt(port));
 		
 		 return score;
