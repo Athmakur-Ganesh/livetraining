@@ -20,9 +20,5 @@ public  CustomerImage specific() {
 		return new CustomerImage(101, "Ramesh", "/images/ramesh.jpg", "customer avatar");
 }
 	
-	@Bean
-	private  CustomerImage standBy() {
-		
-		return new CustomerImage(0, "gues", "/images/custmer.jpg", "Default  Image");
-	}
+	
 }

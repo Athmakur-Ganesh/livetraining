@@ -18,15 +18,13 @@ public class CustomerImageController {
 	@Qualifier("specific")
 	private  CustomerImage specific;
 	
-	@Autowired
-	@Qualifier("standBy")
-	private  CustomerImage standBy;
+	
 	
 	@GetMapping(path = "/api/v1/images/{id}")
 	public CustomerImage fetchImage(@PathVariable("id") int id) 
 			 throws InterruptedException {
 		
-		     CustomerImage image = standBy;
+		     CustomerImage image = null;
 		     
 		     if(id<10) {
 		    	
