@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,9 +13,15 @@ public class CibilScoreController {
 
 	private CibilScoreRepository repo;
 	
-	@GetMapping(path = "/api/v1/cibilscore/{panNumber}")
+	@Value("${server.port}")
+	private String port;
+	@GetMapping(path = "/api/v1/cibilscores/{panNumber}")
 	public CibilScore findByPanNumber(@PathVariable("panNumber") String panNumber) {
 		
-		 return repo.findByPanNumber(panNumber);
+		 CibilScore score = repo.findByPanNumber(panNumber);
+		 
+		 score.setScore(Integer.parseInt(port));
+		
+		 return score;
 	}
 }
