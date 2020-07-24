@@ -3,7 +3,6 @@ package com.example.demo;
 import org.springframework.stereotype.Component;
 
 import com.netflix.zuul.ZuulFilter;
-import com.netflix.zuul.constants.ZuulConstants;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
