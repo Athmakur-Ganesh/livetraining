@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.ifaces.CustomerImageClient;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class CustomerImageClientImpl implements CustomerImageClient {
 
 	@Autowired
@@ -17,6 +20,7 @@ public class CustomerImageClientImpl implements CustomerImageClient {
 	@Override
 	public String getImageById(@PathVariable("id") int id) {
 		
+		log.info("get Image by Called ");
 		return this.client.getImageById(id);
 	}
 

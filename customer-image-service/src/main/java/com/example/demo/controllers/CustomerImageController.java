@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.CustomerImage;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @CrossOrigin(origins = "*")
+@Slf4j
 public class CustomerImageController {
 
 	
@@ -24,6 +27,7 @@ public class CustomerImageController {
 	public CustomerImage fetchImage(@PathVariable("id") int id) 
 			 throws InterruptedException {
 		
+		log.info("Fetch Image in Service called");
 		     CustomerImage image = null;
 		     
 		     if(id<10) {
