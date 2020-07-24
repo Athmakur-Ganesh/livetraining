@@ -1,4 +1,6 @@
 
 management:  endpoints:    web:      exposure:        include:        - "*"  
+
 server:
   port: 6868  
+
