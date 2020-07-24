@@ -1,3 +1,9 @@
+# Hystrix DashBoard
+
+Change the Spring Boot version to 2.1 since there are some issues with jquery  spring boot 2.3 is not 
+supporting dashboard use http://localhost:6868/hystrix and in text field use
+http://localhost:6868/actuator/hystrix.stream  
+
 # livetraining
 
 OAuth Example Updated 
