@@ -1,5 +1,4 @@
-
-  
+ 
 spring:
   application:
     name: api-gatway
@@ -11,7 +10,16 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka      
 
-      
+ribbon:
+  eureka:
+    enabled: false
+
+zuul:
+ routes:
+   tax-service:
+     path: /tax-service/**
+     url: http://localhost:2022/
+
 management:
   endpoints:
     web:
@@ -22,5 +30,4 @@ management:
 server:
   port: 6060
   
-
           
