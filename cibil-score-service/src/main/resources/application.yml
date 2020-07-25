@@ -1,0 +1,17 @@
+spring:  profiles:  - dev
+    application:    name: load-balanced-cibil      jpa:    hibernate:      ddl-auto: update      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl          datasource:    driver-class-name: com.mysql.cj.jdbc.Driver    url: jdbc:mysql://localhost:3306/test    username: root    password: srivatsan    
+eureka:  instance:    instance-id: dev-1    management:  endpoints:    web:      exposure:        include:        - "*"    
+server:  port: 5050
+---
+
+spring:  profiles:  - prod  
+  application:
+    name: load-balanced-cibil  
+  jpa:    hibernate:      ddl-auto: update      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl          datasource:    driver-class-name: com.mysql.cj.jdbc.Driver    url: jdbc:mysql://localhost:3306/test    username: root    password: srivatsan  
+eureka:
+  instance:
+    instance-id: prod-1
+      
+management:  endpoints:    web:      exposure:        include:        - "*"  
+server:
+  port: 5055  

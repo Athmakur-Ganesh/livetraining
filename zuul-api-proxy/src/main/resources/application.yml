@@ -1,0 +1,79 @@
+ 
+spring:
+  application:
+    name: api-gatway
+    
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka      
+
+#zuul:
+#  routes:
+#    tax-service:
+#      path: /tax-service/**
+#      url: http://localhost:2020/
+
+zuul:
+  routes:
+    tax-service:
+      path: /tax-service/**
+      service-id: tax-service
+ribbon:
+  eureka:
+    enabled: false
+
+tax-service: 
+  ribbon:
+    listOfServers: http://localhost:2020/, http://localhost:2022/   
+    
+                
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"      
+        
+server:
+  port: 6060
+  
+#server:
+#  port: 7575
+#  
+#spring:
+#  application:
+#    name: gateway-proxy-service  
+    
+     
+#zuul:
+#  host:
+#    socket-timeout-millis: 2000000
+#  ribbon:
+#     eager-load:
+#      enabled: true
+#      
+#  routes:
+#    catlog-service:
+#       path: /catlog-service/**
+#       url: http://localhost:3333/
+#    
+#  
+#  
+##hystrix:
+##  command:
+##    default:
+##      execution:
+##        isolation:
+##          thread:
+##            timeoutInMilliseconds: 60000
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include:
+#        - "*"
+#        
+          

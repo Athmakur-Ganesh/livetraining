@@ -12,7 +12,8 @@ import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 
 @Entity
-@Table(name="synciblscore")
+
+@Table(name="syncibilscore")
 @AllArgsConstructor
 @Data
 @Slf4j

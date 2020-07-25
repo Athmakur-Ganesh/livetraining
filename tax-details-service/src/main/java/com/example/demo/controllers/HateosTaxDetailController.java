@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
@@ -26,10 +27,14 @@ public class HateosTaxDetailController {
 	@Autowired
 	private HateosTaxDetailRepository service;
 	
+
+	@Value("${server.port}")
+	private String port;
+	
 	@GetMapping(path = "/api/v2/taxdetails",produces = "application/hal+json")
 	public CollectionModel<HateosTaxDetail> findAll(){
 		
-		log.info("find All Method Invoked");
+		log.info("find All Method Invoked"+port);
 		List<HateosTaxDetail> details= this.service.findAll();
 		
 		for(HateosTaxDetail eachItem: details) {
@@ -52,9 +57,10 @@ public class HateosTaxDetailController {
 	
 	@GetMapping(path = "/api/v2/taxdetails/{panNumber}",produces = "application/hal+json")
 	public CibilScore findByPan(){
+		log.info("find All Method Invoked"+port);
+
 		
-		
-		return new CibilScore(24,"aa","ramesh",450);
+		return new CibilScore(24,"aa","ramesh",Integer.parseInt(port));
 		
 	}
 }

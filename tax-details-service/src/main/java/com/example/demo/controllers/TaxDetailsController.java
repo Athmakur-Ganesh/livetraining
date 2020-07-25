@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,10 +29,13 @@ public class TaxDetailsController {
 	@Autowired
 	private TaxDetailsService service;
 	
+	@Value("${server.port}")
+	private String port;
+	
 	@GetMapping(path = "/api/v1/taxdetails")
 	public List<TaxDetail> findAll(){
 		
-		log.info("find All Method Invoked");
+		log.info("find All Method Invoked"+ port);
 		return this.service.findAll();
 	}
 	
@@ -47,7 +51,7 @@ public class TaxDetailsController {
 	@PutMapping(path = "/api/v1/taxdetails")
 	public TaxDetail update(@RequestBody TaxDetail entity) {
 		
-		log.info("Update Method Invoked");
+		log.info("Update Method Invoked"+port);
 
 		return this.service.update(entity);
 	}
